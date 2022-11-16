@@ -4,7 +4,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.studentForm{
+#studentForm{
     margin-left: 550px;
 }
 
@@ -17,4 +17,9 @@
 .passwordReset-button{
     width: 150px;
     height: 50px;
+}
+
+#forgot_password_form{
+    padding-left: 500px;
+    margin-top: 150px;
 }

@@ -1,5 +1,5 @@
 <?php
-require_once('pdo.php');
+require_once "pdo.php";
 ?>
 
 
@@ -16,7 +16,7 @@ require_once('pdo.php');
 
 <body>
     <p class="studentLogin">Student Login</p>
-    <form method="POST" class="studentForm">
+    <form method="POST" id="studentForm">
         <label for="studentEmail">Email ID</label>
         <input type="text" id="studentEmail" name="studentEmail" class="loginInput"><br>
         <label for="password">Password</label>
