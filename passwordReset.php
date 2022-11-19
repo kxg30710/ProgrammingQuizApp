@@ -15,10 +15,11 @@ require_once "pdo.php";
 </head>
 
 <body>
-    <form id="forgot_password_form" method="POST">
+    <button onclick="history.back()">Back to Login Page</button>
+    <form id="forgot_password_form" method="GET">
         <label for="email">Enter your email address : </label>
         <input type="text" name="email" id="email" class="loginInput">
-        <p id="error">The email address is not present in the database !!</p>
+        <p id="error" style="display:inline-block;color:red">The email address is not present in the database !!</p>
         <br>
         <input type="submit" value="Submit">
     </form>

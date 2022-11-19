@@ -1,3 +1,4 @@
 To run this app, you need to download MAMP and run the files from the project.sql file into you database.
+Using php mailer package installed in the project folder for sending emails.
 
 git pull test

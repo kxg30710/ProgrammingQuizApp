@@ -12,7 +12,6 @@ try {
         $l_name = $row['last_name'];
         $email = $row['email'];
         $password = $row['password'];
-       
     }
 } catch (Exception $ex) {
     date_default_timezone_set("America/Chicago");
@@ -92,13 +91,13 @@ if (isset($_POST['update'])) {
 
 function update_data($pdo, $id, $f_name, $pwd, $l_name, $email)
 {
-    
+
 
 
     try {
         $update_query = "UPDATE students set  first_name = :first_name, last_name=:last_name, 
         email = :email, password=:password where stud_id='$id'";
-        
+
         $dbstmt1 = $pdo->prepare($update_query);
         $dbstmt1->execute(array(
             ':first_name' => $f_name,
@@ -112,7 +111,6 @@ function update_data($pdo, $id, $f_name, $pwd, $l_name, $email)
         $message = $ex->getMessage();
         createLog($message);
     }
-
 }
 
 
