@@ -1,20 +1,20 @@
 $(document).ready(function(){
     $('#studentForm').on('submit',function(event){
         event.preventDefault();
-        var studentEmail = $('#studentEmail').val();
+        var student_id = $('#studentid').val();
         var password = $('#password').val();
-        console.log(studentEmail);
+        console.log(student_id);
         console.log(password);
         $.getJSON('jsonStudentsEmails.php',function(data){
             for(var i =0;i<data.length;i++){
-                var email = data[i].email;
+                var id = data[i].stud_id;
                 var pass = data[i].password;
-                if(email === studentEmail){
+                if(id === student_id){
                     if(pass === password){
                         $("#studentForm").unbind('submit').submit();
                     }
                     else{
-                        alert("Incorrect password. Kindly enter the correct password !!");
+                        alert("Incorrect email ID or  password. Kindly enter the correct details !!");
                         console.log("incorrect password");
                     }
                     break;

@@ -18,9 +18,9 @@ session_start();
 
 <body>
     <p class="studentLogin">Student Login</p>
-    <form method="POST" id="studentForm" action="quiz.php">
-        <label for="studentEmail">Email ID</label>
-        <input type="text" id="studentEmail" name="studentEmail" class="loginInput"><br>
+    <form method="POST" id="studentForm" action="Course_select.php">
+        <label for="studentid">StudentID</label>
+        <input type="text" id="studentid" name="studentid" class="loginInput"><br>
         <label for="password">Password</label>
         <input type="text" id="password" name="password" class="loginInput"><br>
         <a href="passwordReset.php" style="float:inline-start">forgot password ?</a> <br><br>
