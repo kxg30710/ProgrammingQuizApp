@@ -27,7 +27,7 @@ echo "<h1>List of the courses assigned to the student</h1>";
         echo '<table border = "1">' . "\n";
         echo '<tr><td>Course ID</td>';
         echo '<td>Student ID</td>';
-        echo '<td>Exam Taken</td></tr>';
+        echo '<td>Quiz Status</td></tr>';
         while ($row = $check->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr><td>";
             echo ($row['stud_id']);

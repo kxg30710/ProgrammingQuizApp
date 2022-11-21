@@ -40,7 +40,6 @@ echo '<p style="text-align:center">This exam consist of 10 questions and there i
         <?php
             $questionNumber++;
             $answerNumber = "answer" . $answerCount;
-            echo $question['answer'];
             $_SESSION[$answerNumber] = $question['answer'];
             $answerCount++;
             echo "<br><br>";
