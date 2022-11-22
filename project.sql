@@ -6,7 +6,7 @@ CREATE TABLE students(
 stud_id INT(20) UNSIGNED NOT NULL,
 first_name VARCHAR(128) NOT NULL,
 last_name VARCHAR(128) NOT NULL,
-email VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
 password CHAR(128) NOT NULL,
 PRIMARY KEY (stud_id)
 );
@@ -27,13 +27,14 @@ FOREIGN KEY (course_id) REFERENCES batch(course_id)
 
 CREATE TABLE question_bank(
     course_id VARCHAR(10) NOT NULL,
-    question_id MEDIUMINT UNSIGNED,
-    question varchar(255),
+    question_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    question varchar(2500),
     option_1 varchar(255),
     option_2 varchar(255),
     option_3 varchar(255),
     option_4 varchar(255),
     answer varchar(255),
+    PRIMARY KEY (question_id),
     FOREIGN KEY (course_id) REFERENCES batch(course_id)
 );
 
