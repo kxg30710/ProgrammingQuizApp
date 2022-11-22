@@ -35,7 +35,6 @@ echo "<h1>List of the courses assigned to the student</h1>";
             echo ($row['course_id']);
             echo ("</td><td>");
             if ($row['exam_taken'] == "") {
-                $_SESSION['course_id'] = $row['course_id'];
                 echo '<a href="exam.php?id=' .  ($row['course_id']) . '">'
                     . 'Take Exam</a>';
             } else {

@@ -3,10 +3,11 @@ session_start();
 require_once "pdo.php";
 $questionNumber = 1;
 $answerCount = 1;
+// echo $_GET['id'];
 // echo $_SESSION['course_id'];
 // echo $_SESSION['studentid'];
 // echo $_SESSION['password'];
-$_POST[$_SESSION['course_id']];
+$_SESSION['course_id'] = $_GET['id'];
 echo "<h1 style='color:red;text-align:center'>Exam</h1>";
 echo '<p style="text-align:center">This exam consist of 10 questions and there is no negative marking for any wrong answers.</p>';
 ?>
