@@ -45,6 +45,9 @@ echo "<h1>List of the courses assigned to the student</h1>";
         }
         ?>
     </form>
+
+    <a href="check_score.php">Check your scores here !</a>
+
 </body>
 
 </html>

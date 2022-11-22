@@ -6,6 +6,7 @@ $answerCount = 1;
 // echo $_SESSION['course_id'];
 // echo $_SESSION['studentid'];
 // echo $_SESSION['password'];
+$_POST[$_SESSION['course_id']];
 echo "<h1 style='color:red;text-align:center'>Exam</h1>";
 echo '<p style="text-align:center">This exam consist of 10 questions and there is no negative marking for any wrong answers.</p>';
 ?>
@@ -32,6 +33,7 @@ echo '<p style="text-align:center">This exam consist of 10 questions and there i
         while ($question = $questions->fetch(PDO::FETCH_ASSOC)) { ?>
             <label for="<?php echo $questionNumber;  ?>"> <?php echo $questionNumber . ". " . $question['question'] ?></label>
             <select name="<?php echo 'question' . $questionNumber; ?>" id="<?php echo $questionNumber;  ?>">
+                <option value="" selected>Please Select an answer</option>
                 <option value="<?php echo $question['option_1']  ?>"><?php echo $question['option_1']  ?></option>
                 <option value="<?php echo $question['option_2']  ?>"><?php echo $question['option_2']  ?></option>
                 <option value="<?php echo $question['option_3']  ?>"><?php echo $question['option_3']  ?></option>
