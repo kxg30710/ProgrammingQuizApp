@@ -1,2 +1,31 @@
 [2022-11-15:  01:54:58pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '700733907' for key 'PRIMARY'.
 [2022-11-15:  11:46:37pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '70076585' for key 'PRIMARY'.
+[2022-11-19:  04:52:46pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '34343456' for key 'PRIMARY'.
+[2022-11-19:  04:54:57pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '34343456' for key 'PRIMARY'.
+[2022-11-19:  05:04:17pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '34343456' for key 'PRIMARY'.
+[2022-11-19:  05:05:06pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '34343456' for key 'PRIMARY'.
+[2022-11-19:  05:12:22pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1234213434' for key 'PRIMARY'.
+[2022-11-19:  05:19:29pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '454545' for key 'PRIMARY'.
+[2022-11-19:  05:20:48pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '454545' for key 'PRIMARY'.
+[2022-11-19:  05:21:16pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4545456' for key 'PRIMARY'.
+[2022-11-19:  05:23:23pm]  SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'stud_id' at row 1.
+[2022-11-19:  05:25:53pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '765756765' for key 'PRIMARY'.
+[2022-11-19:  05:33:55pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3434345654' for key 'PRIMARY'.
+[2022-11-19:  06:30:16pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '454545' for key 'PRIMARY'.
+[2022-11-19:  06:33:44pm]  SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'stud_id' at row 1.
+[2022-11-19:  07:03:00pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:06:32pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:07:26pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:08:17pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:09:28pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:09:44pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:10:28pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-19:  07:10:46pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '343434' for key 'PRIMARY'.
+[2022-11-20:  04:51:42pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3434343' for key 'PRIMARY'.
+[2022-11-20:  04:59:18pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kxg30710@ucmo.edu' for key 'email'.
+[2022-11-20:  05:00:44pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kxg30710@ucmo.edu' for key 'email'.
+[2022-11-20:  05:00:57pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kxg30710@ucmo.edu' for key 'email'.
+[2022-11-20:  05:05:38pm]  SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'stud_id' at row 1.
+[2022-11-21:  11:25:47am]  SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens.
+[2022-11-21:  07:57:41pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3434345' for key 'PRIMARY'.
+[2022-11-21:  07:58:14pm]  SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3434345' for key 'PRIMARY'.

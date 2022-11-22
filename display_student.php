@@ -1,19 +1,31 @@
 <?php
 require_once('pdo.php');
+session_start();
 ?>
-
+<?php
+if(isset($_SESSION['error'])) {
+    echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+    unset($_SESSION['error']);
+}
+if(isset($_SESSION['success'])) {
+     echo '<p style="color:green">'.$_SESSION['success']."</p>\n";
+     unset($_SESSION['success']);
+}
+?>
 <html>
 
 <head>
     <title> Display students details </title>
 </head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <body>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 <ul class="nav navbar-nav">
 			<li class="active"><a href="add_student.php">Add new Students</a></li>
 			
 		</ul>
-        <table border="1">
+        <table id="mytable" border="1">
             <tr>
                 <th> First name </th>
                 <th> Last name </th>
@@ -24,7 +36,7 @@ require_once('pdo.php');
             </tr>
             
 <?php
-require_once('pdo.php');
+
 retrieve_data($pdo);
             function retrieve_data($pdo)
         {
@@ -73,7 +85,9 @@ retrieve_data($pdo);
             
         </table>
 
-  
-</body>
+        <script src="./JS_files/tablesort.js"></script>  
 
+
+
+</body>
 </html>

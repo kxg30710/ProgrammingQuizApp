@@ -1,24 +1,41 @@
 <?php
 require_once('pdo.php');
+session_start();
 ?>
 <?php
 $stud_id = (int)$_POST['stud_edit'];
+$password = "";
+$f_name = "";
+$l_name = "";
+$email = "";
 
 
-try {
-    $stmt = $pdo->query("SELECT first_name, last_name, email, password FROM students where stud_id='$stud_id'");
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $f_name = $row['first_name'];
-        $l_name = $row['last_name'];
-        $email = $row['email'];
-        $password = $row['password'];
+    try {  
+        $sql =  "SELECT first_name, last_name, email, password FROM students where stud_id=:stud_id";       
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array(':stud_id' => $stud_id));
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $f_name = $row['first_name'];
+            
+            $l_name = $row['last_name'];
+            $email = $row['email'];
+            $password = $row['password'];
+        }
+       
+        
+    } catch (Exception $ex) {
+        date_default_timezone_set("America/Chicago");
+        echo "Error while deleting student record check log file for more details";
+        $message = $ex->getMessage();
+        createLog($message);
+        
     }
-} catch (Exception $ex) {
-    date_default_timezone_set("America/Chicago");
-    echo "Error while deleting student record check log file for more details";
-    $message = $ex->getMessage();
-    createLog($message);
-}
+
+
+
+
+
+
 
 function createLog($data)
 {
@@ -39,28 +56,30 @@ function createLog($data)
 <head>
     <title> Edit Student </title>
 </head>
-
+<link rel="stylesheet" href="./css/edit_student.css">
 <body>
+    <div>
     <form method="post" action="edit_student.php">
-        <div class="panel">
+    <h2 id="title"> Edit Student </h2>
             <label for="700#"> 700#:</label>
-            <input type="text" name="700#" size="15" maxlength="20" value="<?= htmlentities($stud_id) ?>" readonly><br>
+            <input type="text" name="700#"  value="<?= htmlentities($stud_id) ?>" readonly><br>
 
             <label for="pwd"> Password:</label>
-            <input type="password" name="pwd" id="pwd" size="15" maxlength="20" value="<?= htmlentities($password) ?>"><br>
+            <input type="password" name="pwd" id="pwd"  value="<?= htmlentities($password) ?>"><br>
 
             <label for="f_name"> First Name:</label>
-            <input type="text" name="f_name" id="f_name" size="15" maxlength="20" value="<?= htmlentities($f_name) ?>"><br>
+            <input type="text" name="f_name" id="f_name"  value="<?= htmlentities($f_name) ?>"><br>
 
             <label for="l_name"> Last Name:</label>
-            <input type="text" name="l_name" id="l_name" size="15" maxlength="20" value="<?= htmlentities($l_name) ?>"><br>
+            <input type="text" name="l_name" id="l_name"  value="<?= htmlentities($l_name) ?>"><br>
 
             <label for="email"> Email:</label>
-            <input type="email" name="email" id="email" value="<?= htmlentities($email) ?>"><br>
+            <input type="text" name="email" id="email" value="<?= htmlentities($email) ?>"><br>
             <input type="submit" name="update" id="update" value="Update"><br>
-        </div>
+       
 
     </form>
+</div>
 </body>
 
 </html>
@@ -105,11 +124,16 @@ function update_data($pdo, $id, $f_name, $pwd, $l_name, $email)
             ':email' => $email,
             ':password' => $pwd
         ));
+        $_SESSION['success'] = 'Updated';
+        header( 'Location: display_student.php' ) ;
+                return;
     } catch (Exception $ex) {
         date_default_timezone_set("America/Chicago");
         echo "Error while updating student record check log file for more details";
         $message = $ex->getMessage();
         createLog($message);
+        $_SESSION['error'] = 'Error while Update';
+        
     }
 }
 
