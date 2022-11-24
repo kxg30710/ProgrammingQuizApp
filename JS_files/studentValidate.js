@@ -14,7 +14,7 @@ $(document).ready(function(){
                         $("#studentForm").unbind('submit').submit();
                     }
                     else{
-                        alert("Incorrect email ID or  password. Kindly enter the correct details !!");
+                        alert("Incorrect student ID or  password. Kindly enter the correct details !!");
                         console.log("incorrect password");
                     }
                     break;

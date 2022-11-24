@@ -38,15 +38,15 @@ echo "<h1>List of the courses assigned to the student</h1>";
                 echo '<a href="exam.php?id=' .  ($row['course_id']) . '">'
                     . 'Take Exam</a>';
             } else {
-                echo "Already Taken";
+                echo "Exam Already Taken";
+                echo "<br>";
+                echo '<a href="check_score.php?id=' .  ($row['course_id']) . '">'
+                    . 'Check Score</a>';
             }
             echo ("</td></tr>\n");
         }
         ?>
     </form>
-
-    <a href="check_score.php">Check your scores here !</a>
-
 </body>
 
 </html>
