@@ -52,7 +52,9 @@ function createLog($data)
 
 ?>
 <html>
-
+<?php
+if(isset($_SESSION['account']))
+{   include 'side_nav.html'; ?>
 <head>
     <title> Edit Student </title>
 </head>
@@ -80,6 +82,11 @@ function createLog($data)
 
     </form>
 </div>
+
+<?php } else { ?>
+<a href = 'admin_login.php' > <h1> Please Login </h1> </a>
+
+<?php } ?>
 </body>
 
 </html>

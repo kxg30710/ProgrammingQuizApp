@@ -9,7 +9,9 @@ input[type=text], select {
   border-radius: 9px;
   box-sizing: border-box;
 }
-
+#alert{
+    margin-left: 700px;
+}
 #title{
     color : brown;
     text-align : center;
@@ -56,7 +58,8 @@ input[type=button]:hover {
   }
 
 div {
-    margin : auto;
+    
+    margin-left : 500px;
   border-radius: 2px;
   background-color: #f2f2f2;
  

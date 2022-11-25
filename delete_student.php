@@ -4,15 +4,12 @@ session_start();
 ?>
 
 <?php
+
+
+if(isset($_SESSION['account']))
+{   
 $stud_id = (int)$_POST['stud_delete'];
-delete_data($pdo,$stud_id);
 
-
-
-
-
-    function delete_data($pdo,$stud_id)
-    {
         try{
             
             $delete_query = "DELETE from students where stud_id= :id";
@@ -32,7 +29,7 @@ delete_data($pdo,$stud_id);
             header( 'Location: display_student.php' ) ;
             return;
         }
-    }
+    
     function createLog($data)
 {
 $file = "log.txt";
@@ -45,7 +42,12 @@ fclose($fh);
 }
         
         
-var_dump($stud_id);
+
+}else { ?>
+
+    <a href = 'admin_login.php' > <h1> Please Login </h1> </a>
+    
+    <?php }
 ?>
 
  

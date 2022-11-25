@@ -10,15 +10,12 @@ session_start();
 </head>
 
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header"><a class="navbar-brand" href="#">Your Website</a></div>
-		<div id="navbar" class="collapse navbar-collapse">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="display_student.php">View Students</a></li>
-			
-		</ul>
-		</div>
-	</div>
-</nav>
+<?php
+if(isset($_SESSION['account']))
+{  include 'side_nav.html';  ?>
+
+<?php } else { ?>
+<a href = 'admin_login.php' > <h1> Please Login </h1> </a>
+
+<?php } ?>
 </body>

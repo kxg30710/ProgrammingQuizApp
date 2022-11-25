@@ -91,6 +91,12 @@ function createLog($data)
 
 
 ?>
+<?php
+if(isset($_SESSION['account']))
+{   
+    include 'side_nav.html';
+    
+    ?>
 <body>
     <form method="post" action="add_question.php" id="qb">
         <select name="course_id">
@@ -133,4 +139,8 @@ function createLog($data)
            
 
     </form>
+    <?php } else { ?>
+<a href = 'admin_login.php' > <h1> Please Login </h1> </a>
+
+<?php } ?>  
 </body>
