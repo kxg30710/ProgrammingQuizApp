@@ -5,7 +5,8 @@ header('Content-Type: application/json; charset=utf-8');
 
 if(isset($_SESSION['account']))
 {    
-$stmt = $pdo->query("SELECT stud_id,email FROM students");
+   // echo "inside if condition in getjsop";
+$stmt = $pdo->query("SELECT course_id, course_name FROM batch");
 //$stmt = $pdo->prepare("SELECT * FROM students where stud_id = :xyz");
 //$stmt->execute(array(":xyz" => $_GET['id']));
 $rows = array();

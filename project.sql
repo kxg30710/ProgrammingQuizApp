@@ -17,6 +17,11 @@ course_name CHAR(100) NOT NULL,
 PRIMARY KEY (course_id)
 );
 
+CREATE TABLE admin_users(
+username VARCHAR(25) NOT NULL,
+pwd VARCHAR(25) NOT NULL
+);
+
 CREATE TABLE student_assignment(
 stud_id INT(20) UNSIGNED,
 course_id VARCHAR(10) NOT NULL,
@@ -52,6 +57,9 @@ insert into students values (700733072, "Lnu", "Abbas", "kxg30712@ucmo.edu", "ad
 
 insert into batch values ("CS5130", "Advanced Web development");
 insert into batch values ("CS5120", "Advanced Java");
+
+
+insert into admin_users values ("admin", "admin123");
 
 
 insert into student_assignment values (700733071, "CS5130", NULL);

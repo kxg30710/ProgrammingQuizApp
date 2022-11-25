@@ -3,13 +3,7 @@ require_once('pdo.php');
 session_start();
 ?>
 
-<html>
 
-<head>
-    <title> Add Student </title>
-</head>
-<link rel="stylesheet" href="./css/add_student.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <?php
 
@@ -30,13 +24,10 @@ if (isset($_POST['submit'])) {
     ) {
         insert_data($pdo, $id, $f_name, $pwd, $l_name, $email);
         if(isset($_SESSION['error'])) {
-            echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+            echo '<p style="color:red" id="alert">'.$_SESSION['error']."</p>\n";
             unset($_SESSION['error']);
         }
-        if(isset($_SESSION['success'])) {
-             echo '<p style="color:green">'.$_SESSION['success']."</p>\n";
-             unset($_SESSION['success']);
-        }
+        
     } else echo "All fields should be entered!!";
 }
 
@@ -101,7 +92,19 @@ function password_generate($chars)
 }
   //echo password_generate(7)."\n";
 ?>
+<?php
+if(isset($_SESSION['account']))
+{   
+    include 'side_nav.html';
+    
+    ?>
+<html>
 
+<head>
+    <title> Add Student </title>
+</head>
+<link rel="stylesheet" href="./css/add_student.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <body>
     <div>
     <form method="post" action="add_student.php" id="target">
@@ -118,7 +121,7 @@ function password_generate($chars)
            <!--- <input type="password" name="pwd" id="pwd" size="15" maxlength="20" value="Auto Generate" readonly><br> --->
 
             <input type="submit" name="submit" id="submit" value="Add">
-            <input type="button" name="back" id="back" value="Back" onclick = "location.href = 'display_student.php';"><br>
+            
             
             
 
@@ -127,7 +130,12 @@ function password_generate($chars)
    
     
        <script src="./JS_files/studid_emailValidation.js"></script>  
-   
+  
+       
+       <?php } else { ?>
+<a href = 'admin_login.php' > <h1> Please Login </h1> </a>
+
+<?php } ?>       
 </body>
 
 </html>
