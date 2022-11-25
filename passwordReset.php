@@ -69,11 +69,9 @@ if (isset($_POST['email'])) {
 </head>
 
 <body>
-    <button onclick="history.back()">Back to Login Page</button>
     <form id="forgot_password_form" method="POST">
         <label for="email">Enter your email address : </label>
         <input type="text" name="email" id="email" class="loginInput">
-        <p id="error" style="display:inline-block;color:red">The email address is not present in the database !!</p>
         <br>
         <input type="submit" value="Send Email">
     </form>
