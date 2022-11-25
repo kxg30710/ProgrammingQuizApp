@@ -55,8 +55,8 @@ $average = $total_marks / $num_students;
 
     <script>
         var data = [{
-            x: ['Your Score', 'Class Average Score'],
-            y: [<?php echo $student_marks;  ?>, <?php echo $average; ?>],
+            x: ['Your Score', 'Class Average Score', 'Max Score Possible'],
+            y: [<?php echo $student_marks;  ?>, <?php echo $average; ?>, 10],
             type: 'bar'
         }];
 

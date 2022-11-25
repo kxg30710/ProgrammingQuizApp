@@ -1,5 +1,59 @@
 <?php
 require_once "pdo.php";
+session_start();
+
+$studentPassword = "";
+if (isset($_POST['email'])) {
+    $student_query = "select password from students where email = :email_id";
+    $studentPasswordQuery = $pdo->prepare($student_query);
+    $studentPasswordQuery->bindParam(':email_id', $_POST['email']);
+    $studentPasswordQuery->execute();
+    while ($row = $studentPasswordQuery->fetch(PDO::FETCH_ASSOC)) {
+        $studentPassword = $row['password'];
+    }
+}
+
+
+
+
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+
+if (isset($_POST['email'])) {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'fnu.abbas.raza@gmail.com';
+    $mail->Password = 'exrscjnjxgghyqxi';
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+    $mail->setFrom('fnu.abbas.raza@gmail.com');
+    $mail->addAddress($_POST['email']);
+    $mail->isHTML(true);
+    $mail->Subject = 'Login Password';
+    $mail->Body = 'Your password is ' . $studentPassword;
+    $mail->send();
+    echo "
+        <script>
+        alert('Send Successfully');
+        document.location.href = 'studentValidate.php';
+        </script>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +70,14 @@ require_once "pdo.php";
 
 <body>
     <button onclick="history.back()">Back to Login Page</button>
-    <form id="forgot_password_form" method="GET">
+    <form id="forgot_password_form" method="POST">
         <label for="email">Enter your email address : </label>
         <input type="text" name="email" id="email" class="loginInput">
         <p id="error" style="display:inline-block;color:red">The email address is not present in the database !!</p>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Send Email">
     </form>
-    <script src="./JS_files/forgotPassword.js"></script>
+    <!-- <script src="./JS_files/forgotPassword.js"></script> -->
 </body>
 
 </html>
