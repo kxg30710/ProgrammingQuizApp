@@ -1,7 +1,7 @@
 CREATE DATABASE eexam;
 USE eexam;
 
-GRANT ALL ON eexam.* TO 'admin'@'localhost' IDENTIFIED BY 'admindb';
+GRANT ALL ON eexam.* TO 'php'@'localhost' IDENTIFIED BY 'phpdb';
 CREATE TABLE students(
 stud_id INT(20) UNSIGNED NOT NULL,
 first_name VARCHAR(128) NOT NULL,
