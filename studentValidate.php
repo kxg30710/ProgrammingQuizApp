@@ -27,7 +27,9 @@ session_start();
             <input type="text" id="studentid" name="studentid" class="loginInput"><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password" class="loginInput"><br>
-            <a href="passwordReset.php" style="float:inline-start">forgot password ?</a> <br><br>
+            <a href="passwordReset.php" style="float:inline-start;padding-right:20px">forgot password ?</a>
+            <a href="admin.php">Admin ?</a>
+            <br><br>
             <input type="submit" class="btn btn-primary" value="submit" id="submitButton" style="width:100px;">
         </form>
     </div>

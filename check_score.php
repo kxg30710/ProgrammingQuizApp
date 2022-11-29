@@ -50,7 +50,7 @@ $average = $total_marks / $num_students;
     <div id="plot_bar">
     </div>
     <div id="LoginButton">
-        <button onclick="window.location.href='studentValidate.php'" class="btn btn-primary">back to Login Page</button>
+        <button onclick="window.location.href='logoutStudent.php'" class="btn btn-primary">Logout</button>
     </div>
 
     <script>

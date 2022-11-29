@@ -24,8 +24,8 @@ $_SESSION['password'] = $_POST['password'];
         $check->bindParam(':id', $_SESSION['studentid']);
         $check->execute();
         echo '<table border = "1">' . "\n";
-        echo '<tr><td>Course ID</td>';
-        echo '<td>Student ID</td>';
+        echo '<tr><td>Student ID</td>';
+        echo '<td>Course ID</td>';
         echo '<td>Quiz Status</td></tr>';
         while ($row = $check->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr><td>";
