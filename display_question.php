@@ -1,17 +1,6 @@
 <?php
 require_once('pdo.php');
 session_start();
-
-if(isset($_SESSION['Error'])){
-    ?>
-    
-    <h4 id="message" style="margin-left:500px;color:red"><?php echo $_SESSION['Error']; ?></h4>
-   <?php 
-    unset($_SESSION['Error']);
-
-}
-
-
 ?>
 
 
@@ -22,9 +11,9 @@ if(isset($_SESSION['Error'])){
 <html>
 
 <head>
-    <title> Display students details </title>
+    <title> Question Bank </title>
 </head>
-<link rel="stylesheet" href="./css/display_student.css">
+<link rel="stylesheet" href="./css/view_question.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <body>
@@ -41,12 +30,9 @@ if(isset($_SESSION['account']))
 
         <table id="mytable" border="1">
             <tr>
-                <th> First name </th>
-                <th> Last name </th>
-                <th> 700# </th>
-                <th> Email </th> 
-                 
-                <th> Assign Course </th> 
+                <th> Course_ID </th>
+                <th> ID </th>
+                <th> Question </th>
                 <th> Edit </th>
                 <th> Delete </th> 
             </tr>
@@ -55,33 +41,27 @@ if(isset($_SESSION['account']))
 
 
             try{
-            $stmt = $pdo->query("SELECT stud_id, first_name, last_name, email FROM students");
+            $stmt = $pdo->query("SELECT course_id,question_id, question FROM question_bank");
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr><td>";
-                echo ($row['first_name']);
+                echo ($row['course_id']);
                 echo ("</td><td>");
-                echo ($row['last_name']);
+                echo ($row['question_id']);
                 echo ("</td><td>");
-                echo ($row['stud_id']);
+                echo ($row['question']);
                 echo ("</td><td>");
-                echo ($row['email']);
-                echo("</td><td>");
-                echo('<form method="post" action="assign_course.php"><input type="hidden" ');
-                echo('name="assign_course" value="'.$row['stud_id'].'">'."\n");
-                echo('<input type="submit" value="Assign" name="assign" style="border: none;background-color: Transparent; text-decoration: underline;" >');
                 
-                echo("\n</form>\n");
-                echo("</td><td>");
+              
                 
-                echo('<form method="post" action="edit_student.php"><input type="hidden" ');
-                echo('name="stud_edit" value="'.$row['stud_id'].'">'."\n");
+                echo('<form method="post" action="edit_question.php"><input type="hidden" ');
+                echo('name="ques_edit" value="'.$row['question_id'].'">'."\n");
                 echo('<input type="submit" value="Edit" name="edit" style="border: none;background-color: Transparent; text-decoration: underline;" >');
                 
                 echo("\n</form>\n");
                 echo("</td><td>");
 
-                echo('<form method="post" action="delete_student.php"><input type="hidden" ');
-                echo('name="stud_delete" value="'.$row['stud_id'].'">'."\n");
+                echo('<form method="post" action="delete_question.php"><input type="hidden" ');
+                echo('name="ques_delete" value="'.$row['question_id'].'">'."\n");
                 echo('<input type="submit" value="Delete" name="delete" style="border: none;background-color: Transparent; text-decoration: underline;" >');
                 echo("\n</form>\n");
               
