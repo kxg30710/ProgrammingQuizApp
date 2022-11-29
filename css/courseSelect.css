@@ -1,0 +1,12 @@
+#heading{
+    text-align: center;
+    color: blue;
+}
+
+table{
+    margin-left: 500px;
+    border-color: black;
+    border-width: 2px;
+    border: 5px;
+    border-style: solid;
+}

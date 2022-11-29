@@ -3,9 +3,6 @@ session_start();
 require_once "pdo.php";
 $_SESSION['studentid'] = $_POST['studentid'];
 $_SESSION['password'] = $_POST['password'];
-
-echo "<h1>List of the courses assigned to the student</h1>";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +11,12 @@ echo "<h1>List of the courses assigned to the student</h1>";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/courseSelect.css">
     <title>Course List</title>
 </head>
 
 <body>
+    <h1 id="heading">List of the courses assigned</h1>
     <form action="exam.php" method="POST">
         <?php
         $querry = "select * from student_assignment where stud_id = :id";

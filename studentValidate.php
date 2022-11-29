@@ -19,7 +19,7 @@ session_start();
 
 <body>
     <div class="navbar navbar-dark bg-primary">
-        <p class="studentLogin">Student Login</p>
+        <p class="studentLogin">Student Login Page</p>
     </div>
     <div id="studentForm">
         <form method="POST" action="Course_select.php">
@@ -31,7 +31,6 @@ session_start();
             <input type="submit" class="btn btn-primary" value="submit" id="submitButton" style="width:100px;">
         </form>
     </div>
-
     <script src="./JS_files/studentValidate.js"></script>
 </body>
 
