@@ -1,11 +1,12 @@
 #heading{
-    margin-left: 500px;
-    color: blue;
+    margin-left: 430px;
+    color: black;
 }
 
 table{
+    margin-top: 40px;
     margin-left: 500px;
-    border-width: 2px;
-    border: 5px;
+    border-width: 1px;
+    border: 1px;
     border-style: solid;
 }
