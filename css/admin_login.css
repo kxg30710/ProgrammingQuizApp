@@ -1,33 +1,24 @@
-
-input[type="text"], input[type="password"]{
-   
-    padding: 12px 10px;
-    width : 75%;
-    margin : 8px;
-    margin-left : 25px;
+input[type=text], input[type=password] {
+    width : 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    align-items: center;
+    
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 9px;
     box-sizing: border-box;
-    
   }
 
-  label{
-    display: inline-block;
-    width : 11em;
-    margin-left : 25px;
-    
-
-  }
-  
   #title{
       color : brown;
       text-align : center;
   }
   
- 
+
   
- 
+  
+
   input[type=submit] {
     width : 25%;
     background-color: #4CAF50;
@@ -45,19 +36,26 @@ input[type="text"], input[type="password"]{
   input[type=submit]:hover {
     background-color: #45a049;
   }
-  div {
-    
-    margin-left : 500px;
-  border-radius: 2px;
-  background-color:#f1f1f1;
- 
-    width : 400px;
-    height : 60px;
-   
-    padding : 40px 40px;
-}
+  
+  input[type=button]:hover {
+      background-color: #45a049;
+     
+    }
 
+    .message{
+        color : red;
+      text-align : center;
+    }
   
- 
+  div {
+      
+      margin-left : 400px;
+    border-radius: 2px;
+    background-color:#f1f1f1;
+   
+      width : 400px;
+      height : 10px;
   
+      padding : 40px 40px;
+  }
   

@@ -51,7 +51,7 @@ function insert_data($pdo,$course_id, $course_name)
         
         $message = $ex->getMessage();
         createLog($message);
-        $_SESSION['error'] = 'Error in course Insertion';
+        $_SESSION['Error'] = 'Error in course Insertion please check log file';
         
         
     }

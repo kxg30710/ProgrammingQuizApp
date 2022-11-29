@@ -1,10 +1,23 @@
 <html>
+<head>
+<style>
+
   <head>
     <style>
       body {
         margin: 0;
       }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height : 100%;
+  overflow: auto;
+}
       ul {
         list-style-type: none;
         margin: 0;
@@ -28,24 +41,28 @@
         color: white;
       }
 
-      li a:hover:not(.active) {
-        background-color: #555;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <ul>
-      <li><a class="active" href="admin.php">Home</a></li>
-      <li><a href="add_student.php">Add Students</a></li>
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
 
-      <li><a href="display_student.php">View Students list</a></li>
-      <li><a href="add_course.php">Add Course</a></li>
-      <li><a href="view_course.php">View Course</a></li>
-      <li><a href="view_score.php">View Score</a></li>
-      <li><a href="add_question.php">Add Question</a></li>
-      <li><a href="view_question.php">View Questions</a></li>
-      <li><a href="admin_logout.php">Log Out</a></li>
-    </ul>
-  </body>
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="admin.php">Home</a></li>
+  <li><a href="add_student.php">Add Students</a></li>
+ 
+  <li><a href="display_student.php">View Students list</a></li>
+  <li><a href="add_course.php">Add Course</a></li>
+  <li><a href="display_course.php">View Course</a></li>
+  <li><a href="display_score.php">View Score</a></li>
+  <li><a href="add_question.php">Add Question</a></li>
+  <li><a href="display_question.php">View Questions</a></li>
+  <li><a href="admin_logout.php">Log Out</a></li>
+</ul>
+
+
+</body>
 </html>

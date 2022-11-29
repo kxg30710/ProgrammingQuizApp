@@ -2,7 +2,7 @@
 session_start();
 require_once "pdo.php";
 $score = 0;
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 2; $i++) {
     $answer = "answer" . $i;
     $question = 'question' . $i;
     if ($_POST[$question] === $_SESSION[$answer]) {

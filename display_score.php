@@ -22,7 +22,7 @@ if(isset($_SESSION['Error'])){
 <html>
 
 <head>
-    <title> Display students details </title>
+    <title> Display students score </title>
 </head>
 <link rel="stylesheet" href="./css/display_student.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -35,56 +35,56 @@ if(isset($_SESSION['account']))
     include 'side_nav.html'; 
     
     ?>
+    <form action="display_score.php" method="post">
+<select name="course_id" style="margin-left: 300px;">
+        <?php
+            $sql = "Select course_id from batch";
+            $stmt = $pdo->query($sql);
+            
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+           
+                echo "<option value=$row[course_id]>$row[course_id]</option>"; 
 
+            }
+
+        ?>
+
+
+        </select>
+        <input type="submit" style="margin-left: 30px;" name="submit" Value="submit"><br>
 
 
 
         <table id="mytable" border="1">
             <tr>
-                <th> First name </th>
+                <th> Stud_ID </th>
+                <th>First name </th>
                 <th> Last name </th>
-                <th> 700# </th>
-                <th> Email </th> 
-                 
-                <th> Assign Course </th> 
-                <th> Edit </th>
-                <th> Delete </th> 
+                <th> Score </th> 
+                <th> Course_id </th>
+             
             </tr>
             
 <?php
-
-
+if (isset($_POST['submit'])){
+    $course_id = $_POST['course_id'];
+    echo $course_id;
             try{
-            $stmt = $pdo->query("SELECT stud_id, first_name, last_name, email FROM students");
+                
+            $stmt = $pdo->query("
+            SELECT a.stud_id,a.first_name,a.last_name,b.score, b.course_id FROM students as a,score as b WHERE b.course_id = '$course_id' and a.stud_id = b.stud_id");
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr><td>";
+                echo ($row['stud_id']);
+                echo ("</td><td>");
                 echo ($row['first_name']);
                 echo ("</td><td>");
                 echo ($row['last_name']);
                 echo ("</td><td>");
-                echo ($row['stud_id']);
+                echo ($row['score']);
                 echo ("</td><td>");
-                echo ($row['email']);
-                echo("</td><td>");
-                echo('<form method="post" action="assign_course.php"><input type="hidden" ');
-                echo('name="assign_course" value="'.$row['stud_id'].'">'."\n");
-                echo('<input type="submit" value="Assign" name="assign" style="border: none;background-color: Transparent; text-decoration: underline;" >');
+                echo ($row['course_id']);
                 
-                echo("\n</form>\n");
-                echo("</td><td>");
-                
-                echo('<form method="post" action="edit_student.php"><input type="hidden" ');
-                echo('name="stud_edit" value="'.$row['stud_id'].'">'."\n");
-                echo('<input type="submit" value="Edit" name="edit" style="border: none;background-color: Transparent; text-decoration: underline;" >');
-                
-                echo("\n</form>\n");
-                echo("</td><td>");
-
-                echo('<form method="post" action="delete_student.php"><input type="hidden" ');
-                echo('name="stud_delete" value="'.$row['stud_id'].'">'."\n");
-                echo('<input type="submit" value="Delete" name="delete" style="border: none;background-color: Transparent; text-decoration: underline;" >');
-                echo("\n</form>\n");
-              
               
                 
                 echo("</td></tr>\n");
@@ -95,6 +95,8 @@ if(isset($_SESSION['account']))
                 $message = $ex->getMessage();
                 createLog($message);
             }
+        }
+       
        
         function createLog($data)
 {
@@ -110,6 +112,8 @@ if(isset($_SESSION['account']))
 ?>
             
         </table>
+      
+</form>
 
         <script src="./JS_files/tablesort.js"></script>  
         

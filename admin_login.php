@@ -6,12 +6,12 @@ session_start();
 
 if(isset($_SESSION['login_error']))
 {
-    echo "<p> $_SESSION[login_error]</p>";
+    echo "<p class=\"message\"> $_SESSION[login_error]</p>";
     unset($_SESSION['login_error']);
 }
 if(isset($_SESSION['logout']))
 {
-    echo "<p>$_SESSION[logout]</p>";
+    echo "<p class=\"message\">$_SESSION[logout]</p>";
     unset($_SESSION['logout']);
 }
 
@@ -41,12 +41,16 @@ if(isset($_SESSION['logout']))
     }
 ?>
 <html>
+<link rel="stylesheet" href="./css/admin_login.css">
     <body>
+        <div>
+            <h2 id="title"> Admin Login </h2>
         <form method="post" action="admin_login.php">
-        <input type=text name="username" id="username" placeholder="Username">
-        <input type=password name="password" id="password" placeholder="Password">
+        <input type=text name="username" id="username" placeholder="Username"><br>
+        <input type=password name="password" id="password" placeholder="Password"><br>
         <input type = submit name="submit" id="submit" value="Log in">
 
         </form> 
+        </div>
     </body>
 </html>
