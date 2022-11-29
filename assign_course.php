@@ -6,7 +6,9 @@ session_start();
 <?php
 if(isset($_SESSION['account']))
 {  
-    include 'side_nav.html'; 
+  
+   include 'side_nav.html'; 
+  
     $stud_id = (int)$_POST['assign_course'];
     ?>
 <head>
@@ -56,7 +58,7 @@ if (isset($_POST['assign_course_button'])) {
     $stud_id = (int)$_POST['assign_course'];
     $course_id = $_POST['course'];
    
-    $exam_taken = 0;
+    $exam_taken = null;
    
             $sql = "select * from student_assignment where stud_id = :stud_id and course_id = :course_id";
             $stmt = $pdo->prepare($sql);
@@ -85,13 +87,15 @@ if (isset($_POST['assign_course_button'])) {
         
         $message = $ex->getMessage();
         createLog($message);
-        $_SESSION['error'] = 'Error in Insertion';
+        $_SESSION['Error'] = 'Error while assigning course please check log file';
         
         
     }
 }
 else
-echo "This course is already assigned for this student";
+?>
+<h4 id="message" style="margin-left:500px;color:red">This course is already assigned for this student </h4>
+<?php
 }
 function createLog($data)
 {

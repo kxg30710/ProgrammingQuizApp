@@ -9,6 +9,7 @@ div {
     
 }
 
+
 input[type=submit] {
     width : 25%;
     background-color: #4CAF50;
@@ -25,4 +26,9 @@ input[type=submit] {
   
   input[type=submit]:hover {
     background-color: #45a049;
+  }
+
+  #message{
+    color : red;
+  text-align : center;
   }

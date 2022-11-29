@@ -139,7 +139,7 @@ function update_data($pdo, $id, $f_name, $pwd, $l_name, $email)
         echo "Error while updating student record check log file for more details";
         $message = $ex->getMessage();
         createLog($message);
-        $_SESSION['error'] = 'Error while Update';
+        $_SESSION['Error'] = 'Error while updating student record check log file for more details';
         
     }
 }

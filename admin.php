@@ -12,7 +12,13 @@ session_start();
 <body>
 <?php
 if(isset($_SESSION['account']))
-{  include 'side_nav.html';  ?>
+
+{
+
+   include 'side_nav.html'; 
+    
+
+?>
 
 <?php } else { ?>
 <a href = 'admin_login.php' > <h1> Please Login </h1> </a>

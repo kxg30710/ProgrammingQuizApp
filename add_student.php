@@ -94,16 +94,16 @@ function password_generate($chars)
 ?>
 <?php
 if(isset($_SESSION['account']))
-{   
-    include 'side_nav.html';
-    
-    ?>
+{ include 'side_nav.html'; 
+   ?>
 <html>
 
 <head>
     <title> Add Student </title>
 </head>
 <link rel="stylesheet" href="./css/add_student.css">
+
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <body>
     <div>
@@ -126,8 +126,8 @@ if(isset($_SESSION['account']))
             
 
     </form>
+
 </div>
-   
     
        <script src="./JS_files/studid_emailValidation.js"></script>  
   

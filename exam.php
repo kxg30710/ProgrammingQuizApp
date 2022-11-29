@@ -25,7 +25,7 @@ echo '<p style="text-align:center">This exam consist of 10 questions and there i
 <body>
     <form action="result.php" method="POST">
         <?php
-        $querry = "select DISTINCT * from question_bank where course_id = :id order by rand() limit 10";
+        $querry = "select DISTINCT * from question_bank where course_id = :id order by rand()";
         $questions = $pdo->prepare($querry);
         $questions->bindParam(':id', $_SESSION['course_id']);
         $questions->execute();

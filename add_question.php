@@ -94,10 +94,16 @@ function createLog($data)
 <?php
 if(isset($_SESSION['account']))
 {   
-    include 'side_nav.html';
+   
+  include 'side_nav.html'; 
+    
     
     ?>
+    <html>
+        <head><link rel="stylesheet" href="./css/add_question.css"></head>
+    
 <body>
+    <div>
     <form method="post" action="add_question.php" id="qb">
         <select name="course_id">
         <?php
@@ -116,31 +122,31 @@ if(isset($_SESSION['account']))
         </select><br>
         
        
-            <label for="question"> Enter Question:</label>
-            <textarea name="question" id="question" size="150" maxlength="200" rows="15" cols="50" border="none" outline="0"></textarea><br>
+         
+            <textarea name="question" id="question"   rows="15" cols="100"  placeholder = "Enter Question"></textarea><br>
  
-            <label for="option1"> Option 1:</label>
-            <input type="text" name="option1" id="option1" size="150" maxlength="200" ><br>
+            <input type="text" name="option1" id="option1"  placeholder = "option1" ><br>
 
-            <label for="option2"> Option 2:</label>
-            <input type="text" name="option2" id="option2" size="150" maxlength="200" ><br>
+            
+            <input type="text" name="option2" id="option2"  placeholder = "option2"><br>
 
-            <label for="option3"> Option 3:</label>
-            <input type="text" name="option3" id="option3" size="150" maxlength="200" ><br>
+            
+            <input type="text" name="option3" id="option3"  placeholder = "option3" ><br>
 
-            <label for="option4"> Option 4:</label>
-            <input type="text" name="option4" id="option4" size="150" maxlength="200" ><br>
+            <input type="text" name="option4" id="option4"  placeholder = "option4"><br>
 
-            <label for="correct_answer"> Correct Answer:</label>
-            <input type="text" name="correct_answer" id="correct_answer" size="150" maxlength="200" ><br>
+            
+            <input type="text" name="correct_answer" id="correct_answer"  placeholder = "correct_answer" ><br>
 
             <input type="submit" name="submit" id="submit" value="Add">
-            <input type="button" name="back" id="back" value="Back" onclick = "location.href = 'display_student.php';"><br>
+            
            
 
     </form>
+        </div>
     <?php } else { ?>
 <a href = 'admin_login.php' > <h1> Please Login </h1> </a>
 
 <?php } ?>  
 </body>
+</html>
