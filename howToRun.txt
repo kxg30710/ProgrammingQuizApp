@@ -1,1 +1,0 @@
-Need to start studentValidate.php to run the application.

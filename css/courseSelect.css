@@ -5,8 +5,10 @@
 
 table{
     margin-top: 40px;
-    margin-left: 500px;
-    border-width: 1px;
-    border: 1px;
+    border-width: 2px;
+    border: 2px;
+    border-color: black;
     border-style: solid;
+    width:70%;
+    margin-left: 100px;
 }

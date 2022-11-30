@@ -2,7 +2,7 @@
 session_start();
 require_once "pdo.php";
 $score = 0;
-for ($i = 1; $i <= 2; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $answer = "answer" . $i;
     $question = 'question' . $i;
     if ($_POST[$question] === $_SESSION[$answer]) {
@@ -41,7 +41,7 @@ $stmt2->execute(array(
 
 <body>
     <h1>Your score in <?php echo $_SESSION['course_id']; ?> is <?php echo $score; ?></h1>
-    <a href="studentValidate.php">Login Page</a>
+    <a href="logoutStudent.php">Logout</a>
 
 </body>
 

@@ -19,13 +19,18 @@ echo '<p style="text-align:center">This exam consist of 10 questions and there i
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        select {
+            width: 70%;
+        }
+    </style>
     <title>QUIZ</title>
 </head>
 
 <body>
     <form action="result.php" method="POST">
         <?php
-        $querry = "select DISTINCT * from question_bank where course_id = :id order by rand()";
+        $querry = "select DISTINCT * from question_bank where course_id = :id order by rand() limit 10";
         $questions = $pdo->prepare($querry);
         $questions->bindParam(':id', $_SESSION['course_id']);
         $questions->execute();
