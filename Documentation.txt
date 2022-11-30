@@ -1,4 +1,13 @@
 To run this app, you need to download MAMP and run the files from the project.sql file into you database.
 Using php mailer package installed in the project folder for sending emails. Used google smtp server for sending emails.
-To start the application run studentValidate.php
-Questions have been inserted only for CS5130, so for run the tests for that course when running the giving exam for the first time.
+
+
+
+
+To run admin login: run admin_login.php
+user name: admin
+password: admin123
+
+To run student login: run studentValidate.php
+sample username : 700733071
+pwd: adfdfdf
