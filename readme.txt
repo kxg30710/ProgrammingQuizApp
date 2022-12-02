@@ -4,10 +4,10 @@ Using php mailer package installed in the project folder for sending emails. Use
 
 
 
-To run admin login: run admin_login.php
+To run admin login: http://localhost/web/admin_login.php
 user name: admin
 password: admin123
 
-To run student login: run studentValidate.php
+To run student login: http://localhost/web/studentValidate.php
 sample username : 700733071
 pwd: adfdfdf
