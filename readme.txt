@@ -11,3 +11,8 @@ password: admin123
 To run student login: http://localhost/web/studentValidate.php
 sample username : 700733071
 pwd: adfdfdf
+
+
+
+
+
